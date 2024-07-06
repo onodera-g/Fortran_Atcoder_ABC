@@ -16,5 +16,5 @@ program abc335a
     end do
 
     !結果の出力
-    write (*, *) S
+    write (*, *) Sa
 end program abc335a

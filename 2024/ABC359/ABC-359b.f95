@@ -17,5 +17,5 @@ program abc358b
     end do
 
     write (*, *) cnt
-
+1 
 end program abc358b

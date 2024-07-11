@@ -1,4 +1,12 @@
-program test
+program abc358c
+    !N：ポップコーン売り場の数
+    !M：ポップコーンの味の種類
+    !S：売り場に売っているポップコーンの種類
+    !bit_pop：売り場にあるポップコーンの種類を２ビットで管理
+    !bit_ans：すべての味のポップコーンを購入するために必要な最低何個の売り場
+    !cnt：全探索の制御用
+    !ans：購入できているポップコーンを２ビットで表現
+    !tmp：全部のポップコーンが購入できた状態を２ビットで表現
     implicit none
     integer(16) N, M, i, j
     character(1), allocatable :: S(:, :)
@@ -45,5 +53,6 @@ program test
         end if
     end do
 
+    !結果の出力
     write (*, *) ans
 end

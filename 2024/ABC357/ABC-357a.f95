@@ -1,4 +1,7 @@
 program abc357a
+    !N：宇宙人の数
+    !M：消毒できる手の合計数
+    !H：各宇宙人の持っている腕の数
     implicit none
     integer i
     integer N, M, tmp

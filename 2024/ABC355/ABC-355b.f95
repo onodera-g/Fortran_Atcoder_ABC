@@ -1,10 +1,17 @@
 program abc355b
+    !N ：数列Aの長さ
+    !M ：数列Bの長さ
+    !A ：長さNの数列
+    !B ：長さMの数列
+    !C ：A,Bを照準に並べた数列
+    !Ac：Cc作成用
+    !Bc：Cc作成用
+    !Cc：Cの数がA,Bのどちらからきているかを管理
     implicit none
-    integer(16) i, j
-    integer(16) N, M, cnt
+    integer(16) i
+    integer(16) N, M
     integer(16), allocatable::A(:), B(:), C(:)
     character(1), allocatable:: Ac(:), Bc(:), Cc(:)
-    character(2) check(2)
 
     !入力
     read (*, *) N, M
@@ -17,10 +24,8 @@ program abc355b
     C(N + 1:M) = B(1:M)
     Cc(1:N) = Ac(1:N)
     Cc(N + 1:M) = Bc(1:M)
-    check(1) = "AA"
-    check(2) = "BB"
 
-    !
+    !Aが連続しているかを判定
     call margesort(C, Cc, N + M)
     do i = 1, N + M - 1
         if (Cc(i) == "A" .and. Cc(i + 1) == "A") then
@@ -31,7 +36,6 @@ program abc355b
     write (*, '(a)') 'No'
 
 contains
-
     subroutine margesort(x, y, n)
         integer(16) N
         integer(16) x(N), tmp(N)

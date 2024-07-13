@@ -1,4 +1,9 @@
 program abc357b
+    !S    ：文字列
+    !Ans  ：Sを変換した文字列
+    !small：小文字の数
+    !large：大文字の数
+    !n    ：文字列Sの文字数
     implicit none
     character(99) S, Ans
     integer i
@@ -42,3 +47,4 @@ program abc357b
     write (*, *) Ans(1:n)
 
 end program abc357b
+

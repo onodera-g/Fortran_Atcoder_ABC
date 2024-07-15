@@ -1,7 +1,8 @@
 program abc353b
-    !
-    !
-    !
+    !N  ：グループの数
+    !K  ：アトラクションの定員
+    !A  ：各グループの人数
+    !cnt：アトラクションの運行回数
     implicit none
     integer N, K, tmp
     integer i, j, cnt
@@ -13,18 +14,14 @@ program abc353b
     read (*, *) A(:)
 
     !カートに積み込み作業
-    tmp = 0
-    cnt = 0
-    i = 1
+    tmp = 0; cnt = 0; i = 1
     do
         cnt = cnt + 1
         tmp = A(i)
-        !write (*, *) "cnt", cnt
-        !write (*, *) i, tmp
+        !定員になるまで詰め込む
         do j = i + 1, N
             if (tmp + A(j) <= K) then
                 tmp = tmp + A(j)
-                !write (*, *) i, tmp
             else
                 exit
             end if

@@ -1,5 +1,9 @@
 program abc352c
-    !
+    !N   ：巨人の人数
+    !Ans ：高さの最大値
+    !A   ：巨人の肩の高さ
+    !B   ：巨人の頭の高さ
+    !diff：肩から頭までの高さ
     implicit none
     integer(16) N, Ans, i
     integer(16), allocatable::A(:), B(:), diff(:)
@@ -16,10 +20,11 @@ program abc352c
     diff = B - A
     call margesort(diff, A, N)
 
+    !順番に肩に乗せていく
     do i = 1, N
         Ans = Ans + A(i)
     end do
-    Ans = Ans + diff(N)
+    Ans = Ans + diff(N) !一番上は頭がでかい巨人を乗せる
 
     !結果の出力
     write (*, *) Ans

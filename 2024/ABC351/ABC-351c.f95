@@ -1,8 +1,8 @@
 program abc351c
     !N  ：ボールの数
     !A  ：各ボールのサイズ
-    !Ans：
-    !cnt：
+    !Ans：列にあるボール
+    !cnt：Ansの配列管理用
     implicit none
     integer, allocatable::A(:), ans(:, :)
     integer i, N, cnt

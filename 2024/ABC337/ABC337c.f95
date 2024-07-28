@@ -335,7 +335,6 @@ end module mod_hash_map
 
 program ABC337c
     use mod_hash_map
-
     integer N, i, key, j
     integer, allocatable::A(:), Ans(:)
     type(t_hash_map) :: map

@@ -40,7 +40,6 @@ program abc363c
 
     !結果の出力
     write (*, *) ans
-
 end program abc363c
 
 subroutine margesort(x, n)

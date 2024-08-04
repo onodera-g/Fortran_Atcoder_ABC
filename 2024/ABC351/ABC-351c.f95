@@ -1,5 +1,8 @@
 program abc351c
-    !
+    !N  ：ボールの数
+    !A  ：各ボールのサイズ
+    !Ans：列にあるボール
+    !cnt：Ansの配列管理用
     implicit none
     integer, allocatable::A(:), ans(:, :)
     integer i, N, cnt
@@ -9,7 +12,8 @@ program abc351c
     allocate (A(N), ans(2, N))
     read (*, *) A(:)
     Ans = 0
-    !
+
+    !ボールの整理
     ans(1, 1) = A(1)
     ans(2, 1) = 1
     cnt = 1
@@ -21,6 +25,8 @@ program abc351c
         !連鎖のチェック
         call ball(ans, cnt, N)
     end do
+
+    !結果の出力
     write (*, *) sum(ans(2, :))
 
 contains

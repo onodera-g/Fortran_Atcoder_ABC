@@ -1,45 +1,46 @@
-program abc355b
-    !N ：数列Aの長さ
-    !M ：数列Bの長さ
-    !A ：長さNの数列
-    !B ：長さMの数列
-    !C ：A,Bを照準に並べた数列
-    !Ac：Cc作成用
-    !Bc：Cc作成用
-    !Cc：Cの数がA,Bのどちらからきているかを管理
+program abc354c
+    !N  ：カードの枚数
+    !A  ：カードの強さ
+    !C  ：カードのコスト
+    !num：カードの並び順
+    !Ans：捨てた後のカード構成
+    !cnt：捨てた後のカード枚数
     implicit none
-    integer(16) i
-    integer(16) N, M
-    integer(16), allocatable::A(:), B(:), C(:)
-    character(1), allocatable:: Ac(:), Bc(:), Cc(:)
+    integer(16) N, i, ii, cnt
+    integer(16), allocatable::A(:), C(:), num(:), Ans(:)
 
     !入力
-    read (*, *) N, M
-    allocate (A(N), B(M), C(N + M))
-    allocate (Ac(N), Bc(M), Cc(N + M))
-    read (*, *) (A(i), i=1, N)
-    read (*, *) (B(i), i=1, M)
-    Ac = "A"; Bc = "B"
-    C(1:N) = A(1:N)
-    C(N + 1:M) = B(1:M)
-    Cc(1:N) = Ac(1:N)
-    Cc(N + 1:M) = Bc(1:M)
+    read (*, *) N
+    allocate (A(N), C(N), Ans(N), num(N))
+    do i = 1, N
+        read (*, *) A(i), C(i)
+        num(i) = i
+    end do
+    call margesort(A, num, N)
 
-    !Aが連続しているかを判定
-    call margesort(C, Cc, N + M)
-    do i = 1, N + M - 1
-        if (Cc(i) == "A" .and. Cc(i + 1) == "A") then
-            write (*, '(a)') 'Yes'
-            stop
+    !弱いカードを捨てる
+    Ans(1) = num(1); cnt = 1; ii = 1
+    do i = 2, N
+        if (C(num(ii)) > C(num(i))) then
+            cnt = cnt + 1
+            Ans(cnt) = num(i)
+            ii = i
         end if
     end do
-    write (*, '(a)') 'No'
+    call margesort(Ans, Ans, N)
+
+    !結果の出力
+    write (*, '(i0)') cnt
+    do i = cnt, 1, -1
+        write (*, '(i0,1x)', advance='no') Ans(i)
+    end do
 
 contains
+    !
     subroutine margesort(x, y, n)
         integer(16) N
         integer(16) x(N), tmp(N)
-        character(1) y(N), tmp2(N)
+        integer(16) y(N), tmp2(N)
         integer(16) start, end
         start = 1; end = N
         call loop_margesort(x, y, tmp, tmp2, N, start, end)
@@ -48,7 +49,7 @@ contains
         integer(16) left, right, mid
         integer(16) N
         integer(16) x(N), tmp(N)
-        character(1) y(N), tmp2(N)
+        integer(16) y(N), tmp2(N)
         integer(16) i, j, k
 
         !これ以上2分かつできないならretrun
@@ -75,7 +76,7 @@ contains
         !write (*, '(3x,*(f13.101x),a)', advance='no') x(left:right)
         !write (*, '(a)', advance='no') '>>'
         do k = left, right
-            if (tmp(i) < tmp(j)) then
+            if (tmp(i) > tmp(j)) then
                 x(k) = tmp(i)
                 y(k) = tmp2(i)
                 i = i + 1
@@ -91,4 +92,5 @@ contains
         end do
         !write (*, '(3x,*(f13.10,1x))') x(left:right)
     end subroutine loop_margesort
-end program abc355b
+
+end program

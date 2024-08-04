@@ -1,5 +1,7 @@
 program abc351b
-    !
+    !N：グリッドのサイズ
+    !A：グリッドA
+    !B：グリッドB
     implicit none
     character(1), allocatable::A(:, :), B(:, :)
     integer i, j, N
@@ -14,6 +16,7 @@ program abc351b
         read (*, '(*(a1))') (B(i, j), j=1, N)
     end do
 
+    !不一致箇所の検証
     do i = 1, N
         do j = 1, N
             if (A(i, j) /= B(i, j)) then

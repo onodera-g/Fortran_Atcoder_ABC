@@ -1,5 +1,6 @@
 program abc351a
-    !
+    !A：9回までの各回のAチームの得点
+    !B：8回までの各回のAチームの得点
     implicit none
     integer A(9), B(8)
 
@@ -8,6 +9,6 @@ program abc351a
     read (*, *) A(:)
     read (*, *) B(:)
 
-    !送料の計算
+    !結果の出力
     write (*, *) sum(A) - sum(B) + 1
 end program abc351a

@@ -1,4 +1,4 @@
-program abc343a
+program abc344a
     !S：文字列
     implicit none
     integer i
@@ -20,4 +20,4 @@ program abc343a
         end if
         i = i + 1
     end do
-end program abc343a
+end program abc344a

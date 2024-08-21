@@ -1,4 +1,4 @@
-program abc343b
+program abc344b
     !A：整数
     !N：整数Aの個数
     implicit none
@@ -18,4 +18,4 @@ program abc343b
     do i = 0, N - 1
         write (*, *) ans(N - i)
     end do
-end program abc343b
+end program abc344b

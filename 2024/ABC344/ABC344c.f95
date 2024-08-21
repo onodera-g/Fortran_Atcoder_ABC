@@ -60,4 +60,4 @@ program abc344c
             print *, 'Yes'
         end if
     end do
-end program
+end program abc344c

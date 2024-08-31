@@ -1,9 +1,9 @@
 program abc347b
     !found：同一部分文字列の重複を管理するフラグ
-    !cnt：ユニークな部分文字列のカウント
-    !t： ユニークな部分文字列を格納する配列
-    !S：文字列S
-    !lenS：! 入力された文字列の長さ
+    !cnt  ：ユニークな部分文字列のカウント
+    !t    ： ユニークな部分文字列を格納する配列
+    !S    ：文字列S
+    !lenS ：! 入力された文字列の長さ
     implicit none
     integer i, j, k, found
     integer cnt, lenS

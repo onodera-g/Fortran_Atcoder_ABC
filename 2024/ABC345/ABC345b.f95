@@ -1,4 +1,4 @@
-program ceil_division
+program abc345b
     !X  ：整数
     !ans：X/10の結果
     implicit none
@@ -17,4 +17,4 @@ program ceil_division
     !結果出力
     write (*, *) ans
 
-end program ceil_division
+end program abc345b

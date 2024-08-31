@@ -1,5 +1,4 @@
-
-program bidirectional_arrow
+program abc345a
     !S    ：文字列
     !len_S：文字列Sの文字数
     implicit none
@@ -33,4 +32,4 @@ program bidirectional_arrow
     else
         print *, 'No'
     end if
-end program bidirectional_arrow
+end program abc345a

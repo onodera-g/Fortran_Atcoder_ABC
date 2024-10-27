@@ -1,4 +1,4 @@
-program ring_move
+program abc376b
     ! N: リングのパーツ数 (3 ≤ N)
     ! Q: 指示の回数 (1 ≤ Q)
     ! i: ループカウンタ、各指示を処理するために使用
@@ -73,4 +73,4 @@ program ring_move
 
     ! 結果の出力
     print *, total
-end program ring_move
+end program abc376b

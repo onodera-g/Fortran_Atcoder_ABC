@@ -1,4 +1,4 @@
-program abc
+program abc376c
     ! N        : おもちゃの数 (1からNまでの番号)
     ! M        : 既存の箱の数 (M = N - 1)
     ! mid      : 二分探索の中間値
@@ -135,4 +135,4 @@ contains
             end if
         end do
     end function find_insert_pos
-end program abc
+end program abc376c

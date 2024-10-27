@@ -1,4 +1,4 @@
-program abc
+program abc376a
     ! N: ボタンを押す回数 (1 ≤ N ≤ 100)
     ! C: 飴をもらえるまでの待機時間 (1 ≤ C ≤ 1000)
     ! cnt: もらえる飴の個数をカウントする変数
@@ -28,4 +28,4 @@ program abc
     ! 結果の出力
     print *, cnt
 
-end program abc
+end program abc376a

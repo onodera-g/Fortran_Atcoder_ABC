@@ -14,4 +14,4 @@ gfortran 12.2
 
 
 # License
-"abc-fortran" is under [GPL-3.0 license](https://ja.wikipedia.org/wiki/GNU_General_Public_License).
+"Fortran_Atcoder_ABC" is under [GPL-3.0 license](https://ja.wikipedia.org/wiki/GNU_General_Public_License).

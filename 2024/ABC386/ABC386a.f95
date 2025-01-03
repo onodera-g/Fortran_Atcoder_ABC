@@ -1,4 +1,4 @@
-program FullHouse
+program abc386a
     ! A, B, C, D       : 入力として与えられる4枚のカードの値。1から13の整数。
     ! E                : 追加するカードの値。1から13の整数を順に試す。
     ! freq(14)         : 各数字（1～13）の出現頻度をカウントする配列。インデックス0は未使用。
@@ -63,4 +63,4 @@ program FullHouse
         print *, 'No'
     end if
 
-end program FullHouse
+end program abc386a

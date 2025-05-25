@@ -13,10 +13,8 @@ program ABC389c
     ! m           : 一時的にヘビの長さを格納する変数
     ! stored_head : 各ヘビの「頭位置 − offset」を格納する配列
     ! len_arr     : 各ヘビの長さを格納する配列
-
     use, intrinsic :: iso_fortran_env
     implicit none
-
     integer(int32) :: q
     integer(int32), parameter :: inputs_len(*) = [1, 0, 1]
     integer(int32) :: inputs(1)

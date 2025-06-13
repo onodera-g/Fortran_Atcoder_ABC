@@ -1,5 +1,4 @@
 program ABC397b
-    ! IOInsert: 文字列 S に必要な 'i','o' 挿入回数を計算
     ! S        : 入力される文字列 (i/o のみ)
     ! n        : S の長さ
     ! idx      : 走査用インデックス

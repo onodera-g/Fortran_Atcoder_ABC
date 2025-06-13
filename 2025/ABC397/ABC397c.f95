@@ -1,5 +1,4 @@
 program ABC397c
-    ! prefix_dist(i) + suffix_dist(i+1) の最大値を求めます
     ! N             : 配列長
     ! A(1..N)       : 入力される整数列 (1 ≤ A(i) ≤ N)
     ! seen(1..N)    : 要素の出現フラグ (0=未,1=済)
